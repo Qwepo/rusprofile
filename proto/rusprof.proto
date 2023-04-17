@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "./rusprof";
+
+import "google/api/annotations.proto";
+
+
+message CreateReqest {
+    string inn = 1;
+}
+
+message CreateResponse{
+    string inn = 1;
+    string kpp = 2;
+    string name = 3; 
+    string leader = 4;
+}
+
+service Rusprof {
+    rpc GetCompany(CreateReqest) returns(CreateResponse){
+        option (google.api.http) = {
+            get: "/v1/rusprof/getcompany/{inn}"
+            
+        };
+    }
+}

@@ -1,0 +1,22 @@
+version: v1
+plugins:
+  - plugin: go
+    out: gen
+    
+  - plugin: go-grpc
+    out: gen
+    opt:
+    - require_unimplemented_servers=false
+    
+  - plugin: grpc-gateway
+    out: gen
+    opt:
+    - generate_unbound_methods=true
+
+
+
+  - plugin: openapiv2
+    out: cmd/app/swagger
+    opt: allow_merge=true,merge_file_name=rusprof
+    
+

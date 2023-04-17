@@ -1,0 +1,12 @@
+logger:
+  level: debug
+  filename: ../log/incryipt.log
+grpcserver:
+  address: 0.0.0.0
+  port: 8080
+grpcgateway:
+  address: 0.0.0.0
+  port: 8081
+swagger:
+  address: 0.0.0.0
+  port: 8082
